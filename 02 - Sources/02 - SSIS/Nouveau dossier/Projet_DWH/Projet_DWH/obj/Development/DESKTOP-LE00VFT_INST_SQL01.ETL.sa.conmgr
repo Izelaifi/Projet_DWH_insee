@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-LE00VFT_INST_SQL01.ETL.sa"
+  DTS:DTSID="{D6192B8E-A05F-47FF-B2AB-B8782D538532}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-LE00VFT\INST_SQL01;User ID=sa;Initial Catalog=ETL;Provider=SQLNCLI10.1;Persist Security Info=True;Application Name=SSIS-Projet_DWH-{D6192B8E-A05F-47FF-B2AB-B8782D538532}DESKTOP-LE00VFT\INST_SQL01.ETL.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArLu8ZRZSzk2hVTKcreJyUgAAAAACAAAAAAAQZgAAAAEAACAAAADn/mbMYPO8KQ1sSWBUiaCJkq7L+gyLwOfxq8AiZ4UNMAAAAAAOgAAAAAIAACAAAACDWWOTlW68CvgXW1Z0VMxUspAx+EBoR+n3cGwvy/NIX4AAAABAcMZOFQZ9G4ty+kbCKIwqupq5Suy3Yx56HXI7jaVx0/AdwgJQet2uFWslUzUp2n72AgnG8hCu/YqdJK2irzSshcwCwGrik9E7RcmAW1IyVKSFps8JXQoypce6O2EN03bkKmr1MBY9s7y7WotoyzWx4woVziQtcE/YQLSrwkMgDEAAAAApvshoM2jlsxG9fmbK4CS5iSABrM/YzaR4K4eMsjs+IKyYOcdbXxzD9ApSEILeoXaBUbp5KVRK7RggK3SAikNP</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

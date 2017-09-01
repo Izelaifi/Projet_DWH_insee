@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/1/2017 4:05:25 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DESKTOP-LE00VFT"
+  DTS:CreatorName="DESKTOP-LE00VFT\Ismail"
+  DTS:DTSID="{1CD06810-1ED8-4DC0-A553-51D2BC2D35B6}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Alim_T_ODS_Carractéristiques_établissement"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{2BB3860B-EA31-4D24-BAFD-6F4B1669A78C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ETL.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+      DTS:ObjectName="DESKTOP-LE00VFT\INST_SQL01.ETL.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LE00VFT\INST_SQL01;Initial Catalog=ETL;Provider=SQLNCLI10.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Alim_T_ODS_Carractéristiques_établissement-{16E1B15B-9573-4627-8008-082F2DDB0193}DESKTOP-LE00VFT\INST_SQL01.ETL.sa;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ADB79C85-2C83-4774-AF87-B3160B065CEC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETL">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=DESKTOP-LE00VFT\INST_SQL01;User ID=sa;Initial Catalog=ETL;Provider=SQLNCLI10.1;Persist Security Info=True;Application Name=SSIS-Alim_T_ODS_Carractéristiques_établissement-{16E1B15B-9573-4627-8008-082F2DDB0193}DESKTOP-LE00VFT\INST_SQL01.ETL.sa;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EB05E850-8A5A-4D94-A63C-E4EF900E6474}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_Audit">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{78182DE6-72DC-4A35-9D4D-E28EC0551375}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LB_Destination">
+      <DTS:VariableValue
+        DTS:DataType="8">T_ODS_Carractéristiques_établissement</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BC830C3C-EE67-442B-B90F-214413DC2D8A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LB_Fichier_Source">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{FC14AAC9-BE0C-4D70-A800-641B8E52942E}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnError"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{7A0AEE16-30F2-4B77-9A66-508862937FF3}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnError"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC&#x9;[dbo].[PS_ODS_Onerror] ?&#xA;&#x9;&#x9;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_Audit"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnStart"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{F3D7A8AD-86D0-4CBF-BCF3-99A06921C8CA}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnStart"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC  [dbo].[PS_ODS_OnStart] ?,?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::LB_Fichier_Source"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::LB_Destination"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnSuccess"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{d36bbda8-8159-49bf-8dd0-e5c30d4a3d22}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnSuccess"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC&#x9; [dbo].PS_ODS_OnSucces ?&#xA;&#x9;&#x9;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_Audit"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{556076FA-A73D-4C8A-97CE-3ADE07C70BC5}"
+      DTS:From="Package\Audit OnStart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Alimentation de la table T_ODS_Carractéristiques_établissement" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DBE6B3A1-6BA7-4A07-B71E-DA6BEED75B7B}"
+      DTS:From="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Audit OnError"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ADB1F33B-C591-4A12-A65D-3D9EE5541884}"
+      DTS:From="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\Audit OnSuccess" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="sql11">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="268,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+          TopLeft="195.5,119.5" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Audit OnError"
+          TopLeft="148,204" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Audit OnSuccess"
+          TopLeft="381,208" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Audit OnStart"
+          TopLeft="256,13" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="328.5,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.5"
+              Start="0,0"
+              End="0,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="286.166666666667,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.6666666666666,42.5"
+              Start="0,0"
+              End="-66.6666666666666,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1513353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1513353115727"
+                    Point2="0,17.1513353115727"
+                    Point3="-4,17.1513353115727" />
+                  <mssgle:LineSegment
+                    End="-62.6666666666666,17.1513353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.6666666666666,17.1513353115727"
+                    Point2="-66.6666666666666,17.1513353115727"
+                    Point3="-66.6666666666666,21.1513353115727" />
+                  <mssgle:LineSegment
+                    End="-66.6666666666666,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-46.7163606770833,22.1513353115727,26.7660546875,12.1318359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="372.833333333333,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.6666666666667,46.5"
+              Start="0,0"
+              End="86.6666666666667,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7655786350148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7655786350148"
+                    Point2="0,18.7655786350148"
+                    Point3="4,18.7655786350148" />
+                  <mssgle:LineSegment
+                    End="82.6666666666667,18.7655786350148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.6666666666667,18.7655786350148"
+                    Point2="86.6666666666667,18.7655786350148"
+                    Point3="86.6666666666667,22.7655786350148" />
+                  <mssgle:LineSegment
+                    End="86.6666666666667,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

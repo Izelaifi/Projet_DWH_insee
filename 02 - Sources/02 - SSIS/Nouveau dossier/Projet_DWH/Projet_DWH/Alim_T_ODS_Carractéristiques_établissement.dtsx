@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/1/2017 4:05:25 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DESKTOP-LE00VFT"
+  DTS:CreatorName="DESKTOP-LE00VFT\Ismail"
+  DTS:DTSID="{1CD06810-1ED8-4DC0-A553-51D2BC2D35B6}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Alim_T_ODS_Carractéristiques_établissement"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{A9B11958-FB73-47CE-BDDE-4955768344CB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[base-cc-etab-2015]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{40DD1C3B-D7BC-4127-880B-96F0BB2055F0}"
+      DTS:ObjectName="base-cc-etab-2015">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Ismail\Desktop\Projet_DWH\02 - Sources\05 - Fichier plats\Carracteristiques des etablissements\base-cc-etab-2015.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ETL.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+      DTS:ObjectName="DESKTOP-LE00VFT\INST_SQL01.ETL.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LE00VFT\INST_SQL01;Initial Catalog=ETL;Provider=SQLNCLI10.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Alim_T_ODS_Carractéristiques_établissement-{16E1B15B-9573-4627-8008-082F2DDB0193}DESKTOP-LE00VFT\INST_SQL01.ETL.sa;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3586A20-7670-4557-BC5E-89991BBEFC3A}"
+      DTS:ObjectName="DESKTOP-LE00VFT\INST_SQL01.ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LE00VFT\INST_SQL01;Initial Catalog=ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ADB79C85-2C83-4774-AF87-B3160B065CEC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETL">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=DESKTOP-LE00VFT\INST_SQL01;User ID=sa;Initial Catalog=ETL;Provider=SQLNCLI10.1;Persist Security Info=True;Application Name=SSIS-Alim_T_ODS_Carractéristiques_établissement-{16E1B15B-9573-4627-8008-082F2DDB0193}DESKTOP-LE00VFT\INST_SQL01.ETL.sa;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EB05E850-8A5A-4D94-A63C-E4EF900E6474}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_Audit">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{78182DE6-72DC-4A35-9D4D-E28EC0551375}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LB_Destination">
+      <DTS:VariableValue
+        DTS:DataType="8">T_ODS_Carractéristiques_établissement</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BC830C3C-EE67-442B-B90F-214413DC2D8A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LB_Fichier_Source">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{FC14AAC9-BE0C-4D70-A800-641B8E52942E}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande. Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données de caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données. Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Connections[OleDbConnection]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="DEST_T_ODS_Carracterisitique_Etablissement 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande. Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[T_ODS_Carractéristiques_établissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données de caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS,ROWS_PER_BATCH = 1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données. Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[CODGEO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CODGEO"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CodeSource]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[CODGEO]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[LIBGEO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LIBGEO"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[LB_LibelleCodeSource]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[LIBGEO]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[REG]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REG"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Region]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[REG]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[DEP]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DEP"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Departement]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[DEP]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTOT15]"
+                      cachedDataType="r8"
+                      cachedName="ETTOT15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActif]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTOT15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETAZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETAZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifAgriculture]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETAZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETBE15]"
+                      cachedDataType="r8"
+                      cachedName="ETBE15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifIndustrie]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETBE15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETFZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETFZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifConstruction]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETFZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETGU15]"
+                      cachedDataType="r8"
+                      cachedName="ETGU15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifComSer]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETGU15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETOQ15]"
+                      cachedDataType="r8"
+                      cachedName="ETOQ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifADM]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETOQ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTEF015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsSS]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTEF115]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF115"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsTPE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF115]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTEF1015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF1015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsPE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF1015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTEF2015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF2015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsME]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF2015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETTEF5015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF5015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsGE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF5015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPTOT15]"
+                      cachedDataType="r8"
+                      cachedName="ETPTOT15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActif]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPTOT15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPAZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPAZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifAgriculture]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPAZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPBE15]"
+                      cachedDataType="r8"
+                      cachedName="ETPBE15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifIndustrie]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPBE15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPFZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPFZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifConstruction]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPFZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPGU15]"
+                      cachedDataType="r8"
+                      cachedName="ETPGU15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifComSer]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPGU15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].Columns[ETPOQ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPOQ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifADM]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPOQ15]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CarracteristiqueEtablissement]"
+                      dataType="i4"
+                      name="ID_CarracteristiqueEtablissement" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CodeSource]"
+                      dataType="i4"
+                      name="ID_CodeSource" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[LB_LibelleCodeSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LB_LibelleCodeSource" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Region]"
+                      dataType="i4"
+                      name="ID_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Departement]"
+                      dataType="i4"
+                      name="ID_Departement" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActif]"
+                      dataType="i4"
+                      name="NB_TotalEtsActif" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifAgriculture]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifAgriculture" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifIndustrie]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifIndustrie" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifConstruction]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifConstruction" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifComSer]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifComSer" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifADM]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifADM" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsSS]"
+                      dataType="i4"
+                      name="NB_TotalEtsSS" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsTPE]"
+                      dataType="i4"
+                      name="NB_TotalEtsTPE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsPE]"
+                      dataType="i4"
+                      name="NB_TotalEtsPE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsME]"
+                      dataType="i4"
+                      name="NB_TotalEtsME" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsGE]"
+                      dataType="i4"
+                      name="NB_TotalEtsGE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActif]"
+                      dataType="i4"
+                      name="NB_TotalPosteActif" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifAgriculture]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifAgriculture" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifIndustrie]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifIndustrie" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifConstruction]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifConstruction" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifComSer]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifComSer" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifADM]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifADM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="DEST_T_ODS_Carracterisitique_Etablissement 10000"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande. Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[T_ODS_Carractéristiques_établissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données de caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données. Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LE00VFT\INST_SQL01.ODS]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[CODGEO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CODGEO"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CodeSource]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[CODGEO]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[LIBGEO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LIBGEO"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[LB_LibelleCodeSource]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[LIBGEO]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[REG]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="REG"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Region]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[REG]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[DEP]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DEP"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Departement]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[DEP]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTOT15]"
+                      cachedDataType="r8"
+                      cachedName="ETTOT15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActif]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTOT15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETAZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETAZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifAgriculture]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETAZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETBE15]"
+                      cachedDataType="r8"
+                      cachedName="ETBE15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifIndustrie]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETBE15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETFZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETFZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifConstruction]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETFZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETGU15]"
+                      cachedDataType="r8"
+                      cachedName="ETGU15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifComSer]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETGU15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETOQ15]"
+                      cachedDataType="r8"
+                      cachedName="ETOQ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifADM]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETOQ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTEF015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsSS]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTEF115]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF115"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsTPE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF115]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTEF1015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF1015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsPE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF1015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTEF2015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF2015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsME]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF2015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETTEF5015]"
+                      cachedDataType="r8"
+                      cachedName="ETTEF5015"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsGE]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF5015]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPTOT15]"
+                      cachedDataType="r8"
+                      cachedName="ETPTOT15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActif]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPTOT15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPAZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPAZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifAgriculture]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPAZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPBE15]"
+                      cachedDataType="r8"
+                      cachedName="ETPBE15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifIndustrie]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPBE15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPFZ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPFZ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifConstruction]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPFZ15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPGU15]"
+                      cachedDataType="r8"
+                      cachedName="ETPGU15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifComSer]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPGU15]" />
+                    <inputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].Columns[ETPOQ15]"
+                      cachedDataType="r8"
+                      cachedName="ETPOQ15"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifADM]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPOQ15]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CarracteristiqueEtablissement]"
+                      dataType="i4"
+                      name="ID_CarracteristiqueEtablissement" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_CodeSource]"
+                      dataType="i4"
+                      name="ID_CodeSource" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[LB_LibelleCodeSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LB_LibelleCodeSource" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Region]"
+                      dataType="i4"
+                      name="ID_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Departement]"
+                      dataType="i4"
+                      name="ID_Departement" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActif]"
+                      dataType="i4"
+                      name="NB_TotalEtsActif" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifAgriculture]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifAgriculture" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifIndustrie]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifIndustrie" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifConstruction]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifConstruction" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifComSer]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifComSer" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsActifADM]"
+                      dataType="i4"
+                      name="NB_TotalEtsActifADM" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsSS]"
+                      dataType="i4"
+                      name="NB_TotalEtsSS" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsTPE]"
+                      dataType="i4"
+                      name="NB_TotalEtsTPE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsPE]"
+                      dataType="i4"
+                      name="NB_TotalEtsPE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsME]"
+                      dataType="i4"
+                      name="NB_TotalEtsME" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalEtsGE]"
+                      dataType="i4"
+                      name="NB_TotalEtsGE" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActif]"
+                      dataType="i4"
+                      name="NB_TotalPosteActif" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifAgriculture]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifAgriculture" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifIndustrie]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifIndustrie" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifConstruction]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifConstruction" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifComSer]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifComSer" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB].ExternalColumns[NB_TotalPosteActifADM]"
+                      dataType="i4"
+                      name="NB_TotalPosteActifADM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015"
+              componentClassID="{8C084929-27D1-479F-9641-ABB7CDADF1AC}"
+              contactInfo="Source Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source Excel"
+              name="SRC_base-cc-etab-2015"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande. Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">COM</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappage des paramètres de la commande SQL en variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[base-cc-etab-2015]"
+                  connectionManagerRefId="Package.ConnectionManagers[base-cc-etab-2015]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel]"
+                  name="Sortie de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[CODGEO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[CODGEO]"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[CODGEO]"
+                      name="CODGEO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[LIBGEO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[LIBGEO]"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[LIBGEO]"
+                      name="LIBGEO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[REG]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[REG]"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[REG]"
+                      name="REG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[DEP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[DEP]"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[DEP]"
+                      name="DEP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTOT15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTOT15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTOT15]"
+                      name="ETTOT15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETAZ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETAZ15]"
+                      name="ETAZ15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETBE15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETBE15]"
+                      name="ETBE15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETFZ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETFZ15]"
+                      name="ETFZ15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETGU15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETGU15]"
+                      name="ETGU15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETOQ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETOQ15]"
+                      name="ETOQ15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF015]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF015]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF015]"
+                      name="ETTEF015"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF115]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF115]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF115]"
+                      name="ETTEF115"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF1015]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF1015]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF1015]"
+                      name="ETTEF1015"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF2015]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF2015]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF2015]"
+                      name="ETTEF2015"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF5015]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF5015]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETTEF5015]"
+                      name="ETTEF5015"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPTOT15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTOT15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPTOT15]"
+                      name="ETPTOT15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPAZ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPAZ15]"
+                      name="ETPAZ15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPBE15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPBE15]"
+                      name="ETPBE15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPFZ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPFZ15]"
+                      name="ETPFZ15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPGU15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPGU15]"
+                      name="ETPGU15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPOQ15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ15]"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].Columns[ETPOQ15]"
+                      name="ETPOQ15"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[CODGEO]"
+                      dataType="wstr"
+                      length="255"
+                      name="CODGEO" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[LIBGEO]"
+                      dataType="wstr"
+                      length="255"
+                      name="LIBGEO" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[REG]"
+                      dataType="wstr"
+                      length="255"
+                      name="REG" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[DEP]"
+                      dataType="wstr"
+                      length="255"
+                      name="DEP" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTOT15]"
+                      dataType="r8"
+                      name="ETTOT15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ15]"
+                      dataType="r8"
+                      name="ETAZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE15]"
+                      dataType="r8"
+                      name="ETBE15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ15]"
+                      dataType="r8"
+                      name="ETFZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU15]"
+                      dataType="r8"
+                      name="ETGU15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ15]"
+                      dataType="r8"
+                      name="ETGZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ15]"
+                      dataType="r8"
+                      name="ETOQ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF015]"
+                      dataType="r8"
+                      name="ETTEF015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ015]"
+                      dataType="r8"
+                      name="ETAZ015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE015]"
+                      dataType="r8"
+                      name="ETBE015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ015]"
+                      dataType="r8"
+                      name="ETFZ015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU015]"
+                      dataType="r8"
+                      name="ETGU015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ015]"
+                      dataType="r8"
+                      name="ETGZ015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ015]"
+                      dataType="r8"
+                      name="ETOQ015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF115]"
+                      dataType="r8"
+                      name="ETTEF115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ115]"
+                      dataType="r8"
+                      name="ETAZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE115]"
+                      dataType="r8"
+                      name="ETBE115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ115]"
+                      dataType="r8"
+                      name="ETFZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU115]"
+                      dataType="r8"
+                      name="ETGU115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ115]"
+                      dataType="r8"
+                      name="ETGZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ115]"
+                      dataType="r8"
+                      name="ETOQ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF1015]"
+                      dataType="r8"
+                      name="ETTEF1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ1015]"
+                      dataType="r8"
+                      name="ETAZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE1015]"
+                      dataType="r8"
+                      name="ETBE1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ1015]"
+                      dataType="r8"
+                      name="ETFZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU1015]"
+                      dataType="r8"
+                      name="ETGU1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ1015]"
+                      dataType="r8"
+                      name="ETGZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ1015]"
+                      dataType="r8"
+                      name="ETOQ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF2015]"
+                      dataType="r8"
+                      name="ETTEF2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ2015]"
+                      dataType="r8"
+                      name="ETAZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE2015]"
+                      dataType="r8"
+                      name="ETBE2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ2015]"
+                      dataType="r8"
+                      name="ETFZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU2015]"
+                      dataType="r8"
+                      name="ETGU2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ2015]"
+                      dataType="r8"
+                      name="ETGZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ2015]"
+                      dataType="r8"
+                      name="ETOQ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETTEF5015]"
+                      dataType="r8"
+                      name="ETTEF5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETAZ5015]"
+                      dataType="r8"
+                      name="ETAZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETBE5015]"
+                      dataType="r8"
+                      name="ETBE5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETFZ5015]"
+                      dataType="r8"
+                      name="ETFZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGU5015]"
+                      dataType="r8"
+                      name="ETGU5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETGZ5015]"
+                      dataType="r8"
+                      name="ETGZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETOQ5015]"
+                      dataType="r8"
+                      name="ETOQ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTOT15]"
+                      dataType="r8"
+                      name="ETPTOT15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ15]"
+                      dataType="r8"
+                      name="ETPAZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE15]"
+                      dataType="r8"
+                      name="ETPBE15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ15]"
+                      dataType="r8"
+                      name="ETPFZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU15]"
+                      dataType="r8"
+                      name="ETPGU15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZ15]"
+                      dataType="r8"
+                      name="ETPGZ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ15]"
+                      dataType="r8"
+                      name="ETPOQ15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTEF115]"
+                      dataType="r8"
+                      name="ETPTEF115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ115]"
+                      dataType="r8"
+                      name="ETPAZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE115]"
+                      dataType="r8"
+                      name="ETPBE115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ115]"
+                      dataType="r8"
+                      name="ETPFZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU115]"
+                      dataType="r8"
+                      name="ETPGU115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZ115]"
+                      dataType="r8"
+                      name="ETPGZ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ115]"
+                      dataType="r8"
+                      name="ETPOQ115" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTEF1015]"
+                      dataType="r8"
+                      name="ETPTEF1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ1015]"
+                      dataType="r8"
+                      name="ETPAZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE1015]"
+                      dataType="r8"
+                      name="ETPBE1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ1015]"
+                      dataType="r8"
+                      name="ETPFZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU1015]"
+                      dataType="r8"
+                      name="ETPGU1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZ1015]"
+                      dataType="r8"
+                      name="ETPGZ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ1015]"
+                      dataType="r8"
+                      name="ETPOQ1015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTEF2015]"
+                      dataType="r8"
+                      name="ETPTEF2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ2015]"
+                      dataType="r8"
+                      name="ETPAZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE2015]"
+                      dataType="r8"
+                      name="ETPBE2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ2015]"
+                      dataType="r8"
+                      name="ETPFZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU2015]"
+                      dataType="r8"
+                      name="ETPGU2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZ2015]"
+                      dataType="r8"
+                      name="ETPGZ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ2015]"
+                      dataType="r8"
+                      name="ETPOQ2015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTEF5015]"
+                      dataType="r8"
+                      name="ETPTEF5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZ5015]"
+                      dataType="r8"
+                      name="ETPAZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBE5015]"
+                      dataType="r8"
+                      name="ETPBE5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZ5015]"
+                      dataType="r8"
+                      name="ETPFZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGU5015]"
+                      dataType="r8"
+                      name="ETPGU5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZ5015]"
+                      dataType="r8"
+                      name="ETPGZ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQ5015]"
+                      dataType="r8"
+                      name="ETPOQ5015" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPTEFCP15]"
+                      dataType="r8"
+                      name="ETPTEFCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPAZCP15]"
+                      dataType="r8"
+                      name="ETPAZCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPBECP15]"
+                      dataType="r8"
+                      name="ETPBECP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPFZCP15]"
+                      dataType="r8"
+                      name="ETPFZCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGUCP15]"
+                      dataType="r8"
+                      name="ETPGUCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPGZCP15]"
+                      dataType="r8"
+                      name="ETPGZCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPOQCP15]"
+                      dataType="r8"
+                      name="ETPOQCP15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPRES15]"
+                      dataType="r8"
+                      name="ETPRES15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETNPRES15]"
+                      dataType="r8"
+                      name="ETNPRES15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPRESPUB15]"
+                      dataType="r8"
+                      name="ETPRESPUB15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETNPRESPUB15]"
+                      dataType="r8"
+                      name="ETNPRESPUB15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPPRES15]"
+                      dataType="r8"
+                      name="ETPPRES15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPNPRES15]"
+                      dataType="r8"
+                      name="ETPNPRES15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPPRESPUB15]"
+                      dataType="r8"
+                      name="ETPPRESPUB15" />
+                    <externalMetadataColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel].ExternalColumns[ETPNPRESPUB15]"
+                      dataType="r8"
+                      name="ETPNPRESPUB15" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[CODGEO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[CODGEO]"
+                      name="CODGEO" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[LIBGEO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[LIBGEO]"
+                      name="LIBGEO" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[REG]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[REG]"
+                      name="REG" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[DEP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[DEP]"
+                      name="DEP" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTOT15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTOT15]"
+                      name="ETTOT15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETAZ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETAZ15]"
+                      name="ETAZ15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETBE15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETBE15]"
+                      name="ETBE15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETFZ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETFZ15]"
+                      name="ETFZ15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETGU15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETGU15]"
+                      name="ETGU15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETOQ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETOQ15]"
+                      name="ETOQ15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF015]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF015]"
+                      name="ETTEF015" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF115]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF115]"
+                      name="ETTEF115" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF1015]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF1015]"
+                      name="ETTEF1015" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF2015]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF2015]"
+                      name="ETTEF2015" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF5015]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETTEF5015]"
+                      name="ETTEF5015" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPTOT15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPTOT15]"
+                      name="ETPTOT15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPAZ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPAZ15]"
+                      name="ETPAZ15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPBE15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPBE15]"
+                      name="ETPBE15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPFZ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPFZ15]"
+                      name="ETPFZ15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPGU15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPGU15]"
+                      name="ETPGU15" />
+                    <outputColumn
+                      refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPOQ15]"
+                      dataType="r8"
+                      lineageId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie d'erreur de source Excel].Columns[ETPOQ15]"
+                      name="ETPOQ15" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement.Paths[Sortie d'erreur de destination OLE DB]"
+              endId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1.Inputs[Entrée de destination OLE DB]"
+              name="Sortie d'erreur de destination OLE DB"
+              startId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Outputs[Sortie d'erreur de destination OLE DB]" />
+            <path
+              refId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement.Paths[Sortie de source Excel]"
+              endId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source Excel"
+              startId="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015.Outputs[Sortie de source Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnError"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{7A0AEE16-30F2-4B77-9A66-508862937FF3}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnError"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC&#x9;[dbo].[PS_ODS_Onerror] ?&#xA;&#x9;&#x9;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_Audit"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnStart"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{F3D7A8AD-86D0-4CBF-BCF3-99A06921C8CA}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnStart"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC  [dbo].[PS_ODS_OnStart] ?,?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::LB_Fichier_Source"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::LB_Destination"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Audit OnSuccess"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{d36bbda8-8159-49bf-8dd0-e5c30d4a3d22}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit OnSuccess"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16E1B15B-9573-4627-8008-082F2DDB0193}"
+          SQLTask:SqlStatementSource="EXEC&#x9; [dbo].PS_ODS_OnSucces ?&#xA;&#x9;&#x9;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_Audit"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{556076FA-A73D-4C8A-97CE-3ADE07C70BC5}"
+      DTS:From="Package\Audit OnStart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Alimentation de la table T_ODS_Carractéristiques_établissement" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DBE6B3A1-6BA7-4A07-B71E-DA6BEED75B7B}"
+      DTS:From="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Audit OnError"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ADB1F33B-C591-4A12-A65D-3D9EE5541884}"
+      DTS:From="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\Audit OnSuccess" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="sql11">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="268,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement"
+          TopLeft="195.5,119.5" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Audit OnError"
+          TopLeft="148,204" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Audit OnSuccess"
+          TopLeft="381,208" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Audit OnStart"
+          TopLeft="256,13" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="328.5,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.5"
+              Start="0,0"
+              End="0,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="286.166666666667,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.6666666666666,42.5"
+              Start="0,0"
+              End="-66.6666666666666,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1513353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1513353115727"
+                    Point2="0,17.1513353115727"
+                    Point3="-4,17.1513353115727" />
+                  <mssgle:LineSegment
+                    End="-62.6666666666666,17.1513353115727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.6666666666666,17.1513353115727"
+                    Point2="-66.6666666666666,17.1513353115727"
+                    Point3="-66.6666666666666,21.1513353115727" />
+                  <mssgle:LineSegment
+                    End="-66.6666666666666,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-46.7163606770833,22.1513353115727,26.7660546875,12.1318359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="372.833333333333,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.6666666666667,46.5"
+              Start="0,0"
+              End="86.6666666666667,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7655786350148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7655786350148"
+                    Point2="0,18.7655786350148"
+                    Point3="4,18.7655786350148" />
+                  <mssgle:LineSegment
+                    End="82.6666666666667,18.7655786350148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.6666666666667,18.7655786350148"
+                    Point2="86.6666666666667,18.7655786350148"
+                    Point3="86.6666666666667,22.7655786350148" />
+                  <mssgle:LineSegment
+                    End="86.6666666666667,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Alimentation de la table T_ODS_Carractéristiques_établissement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015"
+          TopLeft="216,142" />
+        <NodeLayout
+          Size="329,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000"
+          TopLeft="146,262" />
+        <NodeLayout
+          Size="305,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1"
+          TopLeft="157,365" />
+        <EdgeLayout
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement.Paths[Sortie de source Excel]"
+          TopLeft="311,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement.Paths[Sortie d'erreur de destination OLE DB]"
+          TopLeft="310,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-83.281484375,21.87548828125,166.56296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\Destination OLE DB"
+          TopLeft="216,510" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\SRC_base-cc-etab-2015">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 10000">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Alimentation de la table T_ODS_Carractéristiques_établissement\DEST_T_ODS_Carracterisitique_Etablissement 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
